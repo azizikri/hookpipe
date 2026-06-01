@@ -1,0 +1,9 @@
+{
+  "payload": "{\"action\":\"push\",\"ref\":\"refs/heads/main\"}",
+  "secret": "test-webhook-secret-123",
+  "headers": {
+    "x-hub-signature-256": "sha256=10c6404d624b5c9398a05d7da3183648d7859f4a806a9d15b7b392eff9c35bb1",
+    "x-github-event": "push",
+    "content-type": "application/json"
+  }
+}

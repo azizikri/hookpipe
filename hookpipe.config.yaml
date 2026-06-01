@@ -1,0 +1,36 @@
+# Hookpipe Configuration
+# All values shown are defaults. Uncomment and modify as needed.
+# Environment variables override these values (HOOKPIPE_* prefix)
+# CLI flags override environment variables
+
+# Server settings
+host: 0.0.0.0
+port: 3000
+
+# Database
+db:
+  path: ./data/hookpipe.db
+
+# Logging
+log:
+  level: info  # trace, debug, info, warn, error, fatal
+
+# Pipeline definitions directory
+pipelines:
+  dir: ./pipelines
+
+# Plugin directory
+plugins:
+  dir: ./plugins
+
+# Default retry configuration (can be overridden per-pipeline)
+retry:
+  max_attempts: 3
+  backoff: exponential  # exponential, linear, fixed
+  initial_delay_ms: 1000
+  max_delay_ms: 300000
+
+# Queue settings
+queue:
+  poll_interval_ms: 1000
+  concurrency: 5

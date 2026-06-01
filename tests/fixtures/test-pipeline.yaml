@@ -1,0 +1,11 @@
+id: test-pipeline
+name: Test Pipeline
+auth:
+  type: hmac-sha256
+  header: X-Hub-Signature-256
+  secret: ${TEST_SECRET}
+destinations:
+  - id: primary
+    type: http
+    url: http://localhost:9999/webhook
+    method: POST

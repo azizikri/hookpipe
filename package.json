@@ -1,0 +1,36 @@
+{
+  "name": "hookpipe",
+  "version": "1.0.0",
+  "description": "Self-hosted webhook relay with transform pipelines",
+  "type": "module",
+  "main": "src/cli/index.js",
+  "bin": {
+    "hookpipe": "./src/cli/index.js"
+  },
+  "scripts": {
+    "start": "node src/cli/index.js serve",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "vitest run tests/integration"
+  },
+  "keywords": ["webhook", "relay", "pipeline", "transform"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "chokidar": "^4.0.3",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "ulid": "^2.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.1.3"
+  }
+}

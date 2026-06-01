@@ -1,0 +1,8 @@
+node_modules
+.git
+.omo
+coverage
+tests
+*.db
+.env
+docker/

@@ -1,0 +1,4 @@
+db:
+  path: './data/${MY_DB_HOST}.db'
+log:
+  level: '${MY_LOG}'

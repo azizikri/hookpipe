@@ -1,0 +1,31 @@
+id: github-push
+name: GitHub Push Notifications
+description: Forward GitHub push events to a Slack-compatible webhook
+auth:
+  type: hmac-sha256
+  header: X-Hub-Signature-256
+  secret: ${GITHUB_WEBHOOK_SECRET}
+filter: examples/github/filter-branch.cjs
+filter_config:
+  branches:
+    - main
+    - release/*
+transform: examples/github/format-push.cjs
+destinations:
+  - id: slack-webhook
+    type: http
+    url: ${SLACK_WEBHOOK_URL}
+    method: POST
+    headers:
+      Content-Type: application/json
+    body_template: |
+      {
+        "text": "{{payload.pusher.name}} pushed {{payload.commits.length}} commit(s) to {{payload.ref}}"
+      }
+    timeout_ms: 5000
+    on_failure: retry
+retry:
+  max_attempts: 5
+  backoff: exponential
+  initial_delay_ms: 2000
+  max_delay_ms: 60000

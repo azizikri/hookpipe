@@ -1,0 +1,9 @@
+{
+  "ref": "refs/heads/main",
+  "pusher": { "name": "testuser", "email": "test@example.com" },
+  "commits": [
+    { "id": "abc1234567890", "message": "feat: add feature", "author": { "name": "testuser" } }
+  ],
+  "repository": { "full_name": "org/repo" },
+  "compare": "https://github.com/org/repo/compare/abc...def"
+}
