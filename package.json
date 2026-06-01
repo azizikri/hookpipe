@@ -7,16 +7,25 @@
   "bin": {
     "hookpipe": "./src/cli/index.js"
   },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "start": "node src/cli/index.js serve",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:integration": "vitest run tests/integration"
+    "test:integration": "vitest run tests/integration",
+    "prepack": "npm test"
   },
-  "keywords": ["webhook", "relay", "pipeline", "transform"],
+  "keywords": ["webhook", "relay", "pipeline", "transform", "fastify", "sqlite"],
   "license": "MIT",
   "engines": {
     "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
