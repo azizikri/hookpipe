@@ -25,6 +25,12 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: npm
 
+      - name: Upgrade npm for trusted publishing support
+        run: npm install -g npm@latest
+
+      - name: Verify npm version
+        run: npm --version
+
       - name: Install native build dependencies
         run: |
           sudo apt-get update
