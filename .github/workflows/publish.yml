@@ -47,7 +47,5 @@ jobs:
             exit 1
           fi
 
-      - name: Publish to npm (trusted publishing)
+      - name: Publish to npm (trusted publishing via OIDC)
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
