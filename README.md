@@ -1,5 +1,7 @@
 # hookpipe
 
+[![npm version](https://img.shields.io/npm/v/@azizikri/hookpipe)](https://www.npmjs.com/package/@azizikri/hookpipe)
+
 Self-hosted webhook relay with transform pipelines. Receive webhooks, authenticate, filter, transform, and deliver to one or more destinations. Built for self-hosted environments where you control the infrastructure.
 
 ## Quick Start — Docker
