@@ -1,11 +1,32 @@
 {
-  "name": "hookpipe",
+  "name": "@azizikri/hookpipe",
   "version": "1.0.0",
   "description": "Self-hosted webhook relay with transform pipelines",
+  "keywords": [
+    "webhook",
+    "relay",
+    "pipeline",
+    "transform",
+    "fastify",
+    "sqlite"
+  ],
+  "homepage": "https://github.com/azizikri/hookpipe#readme",
+  "bugs": {
+    "url": "https://github.com/azizikri/hookpipe/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizikri/hookpipe.git"
+  },
+  "license": "MIT",
+  "author": "azizikri",
   "type": "module",
   "main": "src/cli/index.js",
   "bin": {
-    "hookpipe": "./src/cli/index.js"
+    "hookpipe": "src/cli/index.js"
+  },
+  "directories": {
+    "test": "tests"
   },
   "files": [
     "src",
@@ -18,14 +39,6 @@
     "test:watch": "vitest",
     "test:integration": "vitest run tests/integration",
     "prepack": "npm test"
-  },
-  "keywords": ["webhook", "relay", "pipeline", "transform", "fastify", "sqlite"],
-  "license": "MIT",
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
@@ -41,5 +54,11 @@
   },
   "devDependencies": {
     "vitest": "^3.1.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
